@@ -1,0 +1,144 @@
+/* Estilos globales */
+* {
+  box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Barra superior */
+.navbar {
+  background-color: #2196F3;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 85%; /* Ocupa el 85% de la pantalla */
+  width: 100%; /* Asegura que ocupe 100% en pantallas pequeñas */
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las secciones izquierda y derecha */
+.left {
+  flex: 0 0 35%; /* 35% del contenedor */
+  padding: 20px;
+}
+
+.right {
+  flex: 0 0 65%; /* 65% del contenedor */
+  padding: 20px;
+}
+
+/* Títulos y etiquetas */
+h2 {
+  color: #2196F3;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Inputs y botones */
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #1976D2;
+}
+
+/* Resultados */
+#resultados {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #e9f7fe;
+  border-radius: 5px;
+  border: 1px solid #2196F3;
+  font-size: 1.2em;
+  line-height: 1.6em;
+  text-align: center;
+}
+
+/* Barra de porcentaje */
+.barra-container {
+  margin-top: 30px;
+  height: 30px;
+  width: 100%;
+  background-color: #BBDEFB;
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+}
+
+.barra-ocupado {
+  background-color: #2196F3;
+  height: 100%;
+  transition: width 0.5s;
+}
+
+.barra-libre {
+  background-color: #BBDEFB;
+  height: 100%;
+}
+
+#porcentaje {
+  margin-top: 10px;
+  font-size: 1.2em;
+  text-align: center;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      width: 100%; /* Asegura que ocupe el 100% en pantallas pequeñas */
+  }
+
+  .left, .right {
+      width: 100%; /* Secciones ocupan 100% de ancho */
+  }
+}

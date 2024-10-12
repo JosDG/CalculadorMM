@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Teoría de Colas (M/M/1 y M/M/c)</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Calculadora de Teoría de Colas</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="left">
+            <h2>Parámetros</h2>
+
+            <label for="lambda">Tasa de llegada (&lambda;):</label>
+            <input type="number" id="lambda" placeholder="Clientes por hora">
+
+            <label for="mu">Tasa de servicio (&mu;):</label>
+            <input type="number" id="mu" placeholder="Clientes por hora">
+
+            <label for="c">Número de servidores (c):</label>
+            <input type="number" id="c" value="1">
+
+            <button onclick="calcular()">Calcular</button>
+        </div>
+        <div class="right">
+            <h2>Resultados</h2>
+            <div id="resultados"></div>
+            <div class="barra-container">
+                <div class="barra-ocupado" id="barraOcupado"></div>
+                <div class="barra-libre" id="barraLibre"></div>
+            </div>
+            <div id="porcentaje"></div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
