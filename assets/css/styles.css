@@ -148,7 +148,7 @@ footer p {
   font-size: 1em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .container {
     max-width: 100%;
     margin: 0;
@@ -157,7 +157,12 @@ footer p {
 
   .form-group {
     flex-direction: column;
-    gap: 10px;
+    gap: 0px;
+    width: 100%;
+  }
+
+  .form-group div {
+    width: 100%; 
   }
 
   button {
@@ -166,8 +171,4 @@ footer p {
     font-size: 1.5em;
   }
 
-  .left {
-    align-items: center;
-  }
 }
-
