@@ -1,43 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/img/Logo3.png" rel="icon" />
     <title>J4 MM1</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
     <header>
-        <div class="navbar">
-            <h1>Calculadora de Teoría de Colas</h1>
-        </div>
+      <div class="navbar">
+        <h1>Calculadora de Teoría de Colas</h1>
+      </div>
     </header>
     <div class="container">
-        <div class="left">
-            <h2>Parámetros</h2>
+      <div class="left">
+        <h2>Ingrese los Datos</h2>
 
+        <div class="form-group">
+          <div>
             <label for="lambda">Tasa de llegada (&lambda;):</label>
-            <input type="number" id="lambda" placeholder="Clientes por hora">
+            <input type="number" id="lambda" placeholder="Ingrese &lambda;" />
+          </div>
 
+          <div>
             <label for="mu">Tasa de servicio (&mu;):</label>
-            <input type="number" id="mu" placeholder="Clientes por hora">
+            <input type="number" id="mu" placeholder="Ingrese &mu;" />
+          </div>
 
+          <div>
             <label for="c">Número de servidores (c):</label>
-            <input type="number" id="c" value="1">
+            <input type="number" id="c" placeholder="Ingrese c" value="1" />
+          </div>
 
+          <div>
             <button onclick="calcular()">Calcular</button>
+          </div>
         </div>
-        <div class="right">
-            <h2>Resultados</h2>
-            <div id="resultados"></div>
-            <div class="barra-container">
-                <div class="barra-ocupado" id="barraOcupado"></div>
-                <div class="barra-libre" id="barraLibre"></div>
-            </div>
-            <div id="porcentaje"></div>
+      </div>
+
+      <div class="right">
+        <h2>Resultados</h2>
+        <div class="barra-container">
+          <div class="barra-ocupado" id="barraOcupado"></div>
+          <div class="barra-libre" id="barraLibre"></div>
         </div>
+        <div id="porcentaje"></div>
+        <div id="resultados"></div>
+      </div>
     </div>
 
+    <footer>
+      <div class="footer-content">
+        <p>
+          J4 &copy; 2024 Calculadora de Teoría de Colas. Todos los derechos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
     <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>
