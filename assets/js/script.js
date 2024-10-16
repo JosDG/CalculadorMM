@@ -125,7 +125,7 @@ function actualizarBarra(rho) {
     barraOcupado.style.backgroundColor = "#2196F3"; 
     document.getElementById(
       "porcentaje"
-    ).innerHTML = `Tiempo ocupado: ${porcentajeOcupado}% | Tiempo libre: ${porcentajeLibre}%`;
+    ).innerHTML = `Tiempo ocupado: ${porcentajeOcupado}% | Tiempo libre: ${porcentajeLibre}%<br><strong>Estable</strong>`;
   }
 
   barraLibre.style.width = `${porcentajeLibre}%`;
