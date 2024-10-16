@@ -5,8 +5,10 @@ function calcular() {
 
   if (isNaN(lambda) || isNaN(mu) || lambda <= 0 || mu <= 0 || c <= 0) {
     alert("Por favor ingrese valores válidos para los parámetros.");
-    return;
-  }
+    mi.href = "#"; 
+    return; 
+  }  
+  mi.href = "#rta"; 
 
   let rho;
   let resultadosHTML = "";
