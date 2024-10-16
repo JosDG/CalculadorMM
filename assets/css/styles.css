@@ -134,11 +134,12 @@ button:hover {
 }
 
 footer {
+  margin-top: 20px;
   background-color: #2196f3;
   color: white;
   text-align: center;
   padding: 15px 0;
-  position: fixed;
+  position: relative;
   width: 100%;
   bottom: 0;
 }
@@ -162,7 +163,7 @@ footer p {
   }
 
   .form-group div {
-    width: 100%; 
+    width: 100%;
   }
 
   button {
@@ -170,5 +171,4 @@ footer p {
     width: 100%;
     font-size: 1.5em;
   }
-
 }
