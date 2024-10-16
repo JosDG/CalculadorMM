@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="assets/img/Logo3.png" rel="icon" />
     <title>J4 MM1</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
@@ -15,26 +20,29 @@
     </header>
     <div class="container">
       <div class="left">
-        <h2>Ingrese los Datos</h2>
+        <h2>
+          Ingrese los Datos
+          <a class="" href="#info"><i class="fas fa-info-circle"></i></a>
+        </h2>
 
         <div class="form-group">
           <div>
-            <label for="lambda">Tasa de llegada (&lambda;):</label>
-            <input type="number" id="lambda" placeholder="Ingrese &lambda;" />
+            <label for="lambda">Tasa de llegada (𝜆):</label>
+            <input type="number" id="lambda" placeholder="Ingrese 𝜆" />
           </div>
 
           <div>
-            <label for="mu">Tasa de servicio (&mu;):</label>
-            <input type="number" id="mu" placeholder="Ingrese &mu;" />
+            <label for="mu">Tasa de servicio (𝜇):</label>
+            <input type="number" id="mu" placeholder="Ingrese 𝜇" />
           </div>
 
           <div>
-            <label for="c">Número de servidores (c):</label>
-            <input type="number" id="c" placeholder="Ingrese c" value="1" />
+            <label for="c">Servidores (𝑐):</label>
+            <input type="number" id="c" placeholder="Ingrese 𝑐" value="1" />
           </div>
 
           <div>
-            <button onclick="calcular()">Calcular</button>
+            <button id="mibtn" onclick="calcular()">Calcular</button>
           </div>
         </div>
       </div>
@@ -50,6 +58,139 @@
       </div>
     </div>
 
+    <div class="container mt-3" id="info">
+      <h2>Información</h2>
+      <br />
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header">
+            <a
+              class="collapsed btn"
+              data-bs-toggle="collapse"
+              href="#collapseOne"
+            >
+              <h3>Tasa de llegada (𝜆)</h3>
+            </a>
+          </div>
+          <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              La tasa de llegada (𝜆) es el número promedio de clientes que
+              llegan a un sistema por unidad de tiempo. Se utiliza en la teoría
+              de colas para modelar y analizar el comportamiento de sistemas de
+              servicio, como líneas de atención o procesos de producción. Por
+              ejemplo, si llegan 10 clientes por hora, 𝜆=10 clientes/hora. Es
+              fundamental para calcular otros parámetros, como el tiempo de
+              espera y el rendimiento del sistema.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <a
+              class="collapsed btn"
+              data-bs-toggle="collapse"
+              href="#collapseTwo"
+            >
+              <h3>Tasa de servicio (𝜇)</h3>
+            </a>
+          </div>
+          <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              La tasa de servicio (𝜇) es el número promedio de clientes que un
+              servidor puede atender por unidad de tiempo. Por ejemplo, si un
+              cajero puede atender a 15 clientes por hora, 𝜇 = 15 clientes/hora.
+              Esta tasa es fundamental para calcular el rendimiento del sistema,
+              el tiempo de espera y la utilización de los servidores. Junto con
+              la tasa de llegada (𝜆), permite evaluar la eficiencia y el
+              comportamiento del sistema de colas.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <a
+              class="collapsed btn"
+              data-bs-toggle="collapse"
+              href="#collapseThree"
+            >
+              <h3>Número de servidores (𝑐)</h3>
+            </a>
+          </div>
+          <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              El número de servidores (𝑐) es la cantidad de agentes disponibles
+              para atender a los clientes en un sistema de colas. Por ejemplo,
+              si hay 3 cajeros en un banco, 𝑐 = 3. Aumentar el número de
+              servidores generalmente reduce el tiempo de espera de los
+              clientes. Este parámetro es fundamental para evaluar la eficiencia
+              y capacidad del sistema en modelos de colas como M/M/c.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <a
+              class="collapsed btn"
+              data-bs-toggle="collapse"
+              href="#collapse4"
+            >
+              <h3>M/M/1</h3>
+            </a>
+          </div>
+          <div id="collapse4" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              El modelo M/M/1 es un sistema de colas con llegadas de clientes
+              según un proceso de Poisson y un único servidor con tiempos de
+              servicio exponenciales. Se define por la tasa de llegada (𝜆), la
+              tasa de servicio (𝜇) y la utilización (𝜌 = 𝜆/𝜇), que debe ser
+              menor que 1 para estabilidad. Permite calcular métricas como el
+              número promedio de clientes en el sistema (L), en la cola (Lq), y
+              el tiempo promedio que un cliente pasa en el sistema (W) y en la
+              cola (Wq).
+              <br />
+              <img
+                src="assets/img/mm1.png"
+                alt="MM1"
+                class="d-block"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <a
+              class="collapsed btn"
+              data-bs-toggle="collapse"
+              href="#collapse5"
+            >
+              <h3>M/M/C</h3>
+            </a>
+          </div>
+          <div id="collapse5" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              El modelo M/M/c describe un sistema de colas con múltiples
+              servidores, donde las llegadas de clientes siguen un proceso de
+              Poisson y el tiempo de servicio es exponencial. Se caracteriza por
+              la tasa de llegada (𝜆), la tasa de servicio por servidor (𝜇), y el
+              número de servidores (c). La utilización del sistema se define
+              como 𝜌 = 𝜆/𝑐⋅𝜇, que debe ser menor que 1 para garantizar
+              estabilidad. Este modelo permite calcular métricas como el número
+              promedio de clientes en el sistema (L), en la cola (Lq), y el
+              tiempo promedio en el sistema (W) y en la cola (Wq).
+              <br />
+              <img
+                src="assets/img/mmc.png"
+                alt="MMC"
+                class="d-block"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <div class="footer-content">
         <p>
@@ -60,5 +201,6 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
