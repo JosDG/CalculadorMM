@@ -29,7 +29,7 @@ function calcular() {
               )}</p>
               <p><strong>Probabilidad de que no haya unidades en el sistema (P0):</strong> ${P0.toFixed(
                 4
-              )}</p>
+              ) * 100}%</p>
               <p><strong>Número promedio de unidades en cola (Lq):</strong> ${Lq.toFixed(
                 4
               )}</p>
@@ -43,7 +43,7 @@ function calcular() {
                 4
               )} horas</p>
               <p><strong>Probabilidad de que una unidad que llega tenga que esperar por el servicio (Pw):</strong> ${
-                Pw.toFixed(2) * 100
+                Pw.toFixed(4) * 100
               }%</p>
           `;
   } else {
